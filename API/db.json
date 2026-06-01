@@ -1,0 +1,93 @@
+{
+  "filmes": [
+    {
+      "id": "l1u1",
+      "titulo": "Duro de Matar",
+      "genero": "Ação",
+      "duracao": "120 minutos",
+      "ano": "1988",
+      "plataforma": "Netflix",
+      "sinopse": "Um homem se vinga de quem matou sua família.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Pedro_Tonon_Geromel_-_Grêmio_%28cropped%29.png",
+      "comentarios": [
+        {
+          "nome": "kanemman1900",
+          "comentario": "esse cara é foda, papo 10",
+          "nota": 5
+        },
+        {
+          "nome": "chorumedogremio",
+          "comentario": "se meu pai fosse ele eu era mais feliz",
+          "nota": 5
+        }
+      ],
+      "favorito": false
+    },
+    {
+      "titulo": "American Pie",
+      "genero": "comédia",
+      "duracao": "95 minutos",
+      "ano": "1999",
+      "plataforma": "netflix",
+      "sinopse": "um filme de comédia meio putaria sla é engraçado esse bagui",
+      "imagem": "https://m.media-amazon.com/images/M/MV5BMTg3ODY5ODI1NF5BMl5BanBnXkFtZTgwMTkxNTYxMTE@._V1_FMjpg_UX1000_.jpg",
+      "comentarios": [
+        {
+          "nome": "osama binladem",
+          "comentario": "tico",
+          "nota": 3
+        },
+        {
+          "nome": "cachorro_do_bruno",
+          "comentario": "amo esse filme, me faz esquecer... que to com fome",
+          "nota": 4
+        }
+      ],
+      "id": "9-ew9qXYtyk",
+      "favorito": false
+    },
+    {
+      "titulo": "American Psycho",
+      "genero": "comédia, terror",
+      "duracao": "102 minutos",
+      "ano": "2000",
+      "plataforma": "Prime Video",
+      "sinopse": "an psycho... and american... its that, but really good.",
+      "imagem": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/American_Psycho.png/250px-American_Psycho.png",
+      "comentarios": [],
+      "id": "vlBxfm_Vyrc",
+      "favorito": false
+    },
+    {
+      "titulo": "Bata antes de Entar",
+      "genero": "Ação",
+      "ano": "2015",
+      "plataforma": "Prime",
+      "duracao": "99",
+      "sinopse": "E aí a perua falou: 'Tá a fim?' E eu disse: 'Agora não!",
+      "imagem": "data:image/jpeg;base64,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",
+      "comentarios": [
+        {
+          "nome": "salsicha1998",
+          "comentario": "tengo miedo chefe",
+          "nota": 3
+        }
+      ],
+      "id": "DSUsYG7HQ24",
+      "favorito": true
+    },
+    {
+      "titulo": "House of Wax",
+      "genero": "Terror",
+      "ano": "2005",
+      "plataforma": "Prime Vídeo",
+      "duracao": "110",
+      "sinopse": "una casa de cera :D",
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/b/b0/House_of_Wax_2005_poster.jpg",
+      "comentarios": [],
+      "id": "o6kSWwxCe3g",
+      "favorito": false
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
