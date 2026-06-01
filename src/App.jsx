@@ -1,45 +1,50 @@
 import { useEffect, useState } from "react"
 import { Titulo } from "./components/Titulo"
 import CardFilme from "./components/CardFilme"
-import Favoritos from "./favoritos"
 
 function App() {
-  const [filmes, setFilmes] = useState([])
+  const [destinos, setDestinos] = useState([])
 
   useEffect(() => {
-    async function buscaFilmes() {
-      const resposta = await fetch("http://localhost:3000/filmes")
+    async function buscaDestinos() {
+      const resposta = await fetch("http://localhost:3000/destinos")
       const dados = await resposta.json()
-      // console.log(dados)  
-      setFilmes(dados)
+      setDestinos(dados)
     }
-    buscaFilmes()
+    buscaDestinos()
   }, [])
 
-  function atualizarFilme(id, comentariosAtualizados, favoritoestado) {
-    const filmesAtualizados = filmes.map(filme => {
-      if (filme.id == id) {
+  function atualizarDestino(id, comentariosAtualizados, favoritoestado) {
+    const destinosAtualizados = destinos.map(destino => {
+      if (destino.id == id) {
         return {
-          ...filme,
+          ...destino,
           comentarios: comentariosAtualizados,
-          Favoritos: favoritoestado
+          favorito: favoritoestado !== undefined ? favoritoestado : destino.favorito
         }
       }
-      return filme
+      return destino
     })
-    setFilmes(filmesAtualizados)
+    setDestinos(destinosAtualizados)
   }
 
-  const listaFilmes = filmes.map(filme => (
-    <CardFilme filme={filme} key={filme.id} atualizarFilme={atualizarFilme}/>
+  const listaDestinos = destinos.map(destino => (
+    <CardFilme filme={destino} key={destino.id} atualizarFilme={atualizarDestino}/>
   ))
 
   return (
-    <div>
+    <div className="min-h-screen bg-slate-950 text-slate-100">
       <Titulo />
-      <h2 className="text-2xl my-2 p-3 font-bold">Lista dos Filmes Cadastrados</h2>
-      <div className="grid grid-cols md:grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-3 p-3">
-        {listaFilmes}
+
+      <div className="max-w-7xl mx-auto p-4">
+        <header className="mb-6 rounded-3xl bg-slate-900/80 border border-slate-700 p-6 shadow-xl shadow-cyan-950/20">
+          <h2 className="text-3xl font-bold">Destinos em Destaque</h2>
+          <p className="mt-2 text-slate-400">Encontre a sua próxima viagem com avaliações reais e opções das principais companhias aéreas.</p>
+        </header>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {listaDestinos}
+        </div>
       </div>
     </div>
   )

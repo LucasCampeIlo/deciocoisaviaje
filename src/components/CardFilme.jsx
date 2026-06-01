@@ -1,83 +1,96 @@
 import { useState } from "react"
 import ModalAvaliacao from "./ModalAvaliacao"
 import ListaComentarios from "./ListaComentarios"
-import Favoritos from "../favoritos"
 
 function CardFilme({ filme, atualizarFilme }) {
     const [modalAberta, setModalAberta] = useState(false)
     const [listaAberta, setListaAberta] = useState(false)
 
-    // comentários do filme: calcular a média das notas
-    const comentarios = filme.comentarios
-
-    // soma das notas
+    const comentarios = filme.comentarios || []
     let somaNotas = 0
 
     for (const comentario of comentarios) {
         somaNotas += comentario.nota
     }
 
-    // média
     const media = comentarios.length > 0
         ? somaNotas / comentarios.length
         : 0
 
-    // estrelas
     const estrelas = "⭐".repeat(Math.round(media))
-
-    const favorito = filme.Favoritos
+    const favorito = filme.favorito
 
     return (
         <>
-            <div className="flex border-2 border-gray-500 rounded-lg p-3">
-                <img src={filme.imagem} alt="Capa"
-                    className="w-48 aspect-2/3 mr-3 object-cover" />
-                <div>
-                    <h2 className="text-2xl font-bold">{filme.titulo}</h2>
-                    <p className="font-bold text-lg my-2">
-                        {filme.genero} - {filme.duracao} min
-                    </p>
-                    <p className="font-bold text-lg my-2">
-                        Ano: {filme.ano} - {filme.plataforma}
-                    </p>
-                    <p className="italic text-gray-600 text-sm">
-                        {filme.sinopse}
-                    </p>
-                    <p className="text-yellow-500 font-bold my-3 flex justify-between">
-                        <span>{estrelas} ({media.toFixed(1)})</span>
-                        <span className="text-sm text-gray-600">
-                            {comentarios.length} comentário(s)
-                        </span>
-                    </p>
-                    <div className="flex gap-3 mt-4">
-                        <button onClick={() => setModalAberta(true)}
-                            className="mt-3 bg-violet-600 text-white px-4 py-2 rounded-lg hover:bg-violet-700">
-                            Avaliar
-                        </button>
+            <div className="flex flex-col lg:flex-row border border-slate-700 bg-slate-900/90 rounded-3xl overflow-hidden shadow-xl shadow-cyan-950/20">
+                <div className="relative min-h-[260px] lg:w-64">
+                    <img src={filme.imagem} alt={filme.titulo}
+                        className="w-full h-full object-cover" />
+                    <span className="absolute left-4 top-4 rounded-full bg-cyan-500/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-slate-950">
+                        {filme.genero}
+                    </span>
+                </div>
 
-                        <button
-                            onClick={() => setListaAberta(true)}
-                            className="mt-3 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-800"
-                        >
-                            Ver Comentários
-                        </button>
+                <div className="p-5 flex-1">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                        <div>
+                            <h2 className="text-3xl font-semibold">{filme.titulo}</h2>
+                            <p className="mt-3 text-slate-400">{filme.sinopse}</p>
+                        </div>
+                        <div className="text-right">
+                            <p className="text-sm uppercase tracking-[0.24em] text-slate-500">Melhor época</p>
+                            <p className="text-xl font-semibold text-cyan-200">{filme.ano}</p>
+                        </div>
+                    </div>
 
-                        <button
-                            onClick={() => {
-                                const novoFavoritoEstado = !filme.favorito
-                                fetch(`http://localhost:3000/filmes/${filme.id}`, {
-                                    method: 'PATCH',
-                                    headers: { 'Content-Type': 'application/json' },
-                                    body: JSON.stringify({ favorito: novoFavoritoEstado })
-                                })
-                                .then(() => atualizarFilme(filme.id, filme.comentarios, novoFavoritoEstado))
-                            }}
-                            className={`mt-3 px-4 py-2 rounded-lg ${filme.favorito 
-                                ? 'bg-yellow-500 text-white hover:bg-yellow-600' 
-                                : 'bg-gray-500 text-white hover:bg-gray-600'}`}
-                        >
-                            {filme.favorito ? '⭐ Favorito' : '☆ Adicionar aos Favoritos'}
-                        </button>
+                    <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                        <div className="rounded-3xl bg-slate-950/80 border border-slate-700 p-4">
+                            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Duração</p>
+                            <p className="mt-2 text-lg font-semibold text-slate-100">{filme.duracao} dias</p>
+                        </div>
+                        <div className="rounded-3xl bg-slate-950/80 border border-slate-700 p-4">
+                            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Companhia aérea</p>
+                            <p className="mt-2 text-lg font-semibold text-slate-100">{filme.plataforma}</p>
+                        </div>
+                    </div>
+
+                    <div className="mt-5 grid gap-3 sm:grid-cols-[1fr_auto]">
+                        <div className="rounded-3xl bg-slate-950/90 border border-slate-700 p-4">
+                            <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Avaliação média</p>
+                            <p className="mt-2 text-2xl font-bold text-amber-300">{estrelas}</p>
+                            <p className="text-slate-400 text-sm">{media.toFixed(1)} de 5 • {comentarios.length} avaliações</p>
+                        </div>
+
+                        <div className="flex flex-wrap items-end gap-3">
+                            <button onClick={() => setModalAberta(true)}
+                                className="w-full sm:w-auto rounded-3xl bg-cyan-600 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-500 transition">
+                                Avaliar Destino
+                            </button>
+
+                            <button
+                                onClick={() => setListaAberta(true)}
+                                className="w-full sm:w-auto rounded-3xl bg-slate-800 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-slate-700 transition"
+                            >
+                                Ver Avaliações
+                            </button>
+
+                            <button
+                                onClick={() => {
+                                    const novoFavoritoEstado = !filme.favorito
+                                    fetch(`http://localhost:3000/destinos/${filme.id}`, {
+                                        method: 'PATCH',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify({ favorito: novoFavoritoEstado })
+                                    })
+                                    .then(() => atualizarFilme(filme.id, filme.comentarios, novoFavoritoEstado))
+                                }}
+                                className={`w-full sm:w-auto rounded-3xl px-5 py-3 text-sm font-semibold transition ${filme.favorito
+                                    ? 'bg-amber-400 text-slate-950 hover:bg-amber-300'
+                                    : 'bg-slate-700 text-slate-100 hover:bg-slate-600'}`}
+                            >
+                                {filme.favorito ? '⭐ Favorito' : '☆ Adicionar favorito'}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
