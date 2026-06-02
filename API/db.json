@@ -2,12 +2,12 @@
   "destinos": [
     {
       "id": "d1",
-      "titulo": "Maldivas",
-      "genero": "Praia Tropical",
+      "destinos": "Maldivas",
+      "tipo": "Praia Tropical",
       "duracao": "7",
-      "ano": "Nov a Abr",
-      "plataforma": "Azul Airlines",
-      "sinopse": "Resorts sobre águas cristalinas com transfer de lancha e serviços exclusivos.",
+      "epoca": "Nov a Abr",
+      "companhia": "Azul Airlines",
+      "descricao": "Resorts sobre águas cristalinas com transfer de lancha e serviços exclusivos.",
       "imagem": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
       "comentarios": [
         {
@@ -21,16 +21,17 @@
           "nota": 4
         }
       ],
-      "favorito": true
+      "favorito": false,
+      "assentosDisponiveis": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
     },
     {
       "id": "d2",
-      "titulo": "Paris",
-      "genero": "Urbano Cultural",
+      "destinos": "Paris",
+      "tipo": "Urbano Cultural",
       "duracao": "5",
-      "ano": "Abr a Jun",
-      "plataforma": "Air France",
-      "sinopse": "Rotas diretas para a cidade da luz, com estadia perto dos principais pontos turísticos.",
+      "epoca": "Abr a Jun",
+      "companhia": "Air France",
+      "descricao": "Rotas diretas para a cidade da luz, com estadia perto dos principais pontos turísticos.",
       "imagem": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80",
       "comentarios": [
         {
@@ -39,16 +40,17 @@
           "nota": 5
         }
       ],
-      "favorito": false
+      "favorito": false,
+      "assentosDisponiveis": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
     },
     {
       "id": "d3",
-      "titulo": "Aspen",
-      "genero": "Montanha",
+      "destinos": "Aspen",
+      "tipo": "Montanha",
       "duracao": "6",
-      "ano": "Dez a Fev",
-      "plataforma": "Delta Airlines",
-      "sinopse": "Pacote de inverno com esqui, spa e gastronomia refinada na serra.",
+      "epoca": "Dez a Fev",
+      "companhia": "Delta Airlines",
+      "descricao": "Pacote de inverno com esqui, spa e gastronomia refinada na serra.",
       "imagem": "https://www.aspensnowmass.com/-/media/aspen-snowmass/images/hero/guidehero/summer/2025/roadtrip_hero_2425.png",
       "comentarios": [
         {
@@ -57,27 +59,35 @@
           "nota": 4
         }
       ],
-      "favorito": false
+      "favorito": false,
+      "assentosDisponiveis": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
     },
     {
       "id": "d4",
-      "titulo": "Tóquio",
-      "genero": "Tecnologia e Cultura",
+      "destinos": "Tóquio",
+      "tipo": "Tecnologia e Cultura",
       "duracao": "8",
-      "ano": "Mar a Mai",
-      "plataforma": "Japan Airlines",
-      "sinopse": "Roteiro moderno com experiências gastronômicas e passeios futuristas.",
+      "epoca": "Mar a Mai",
+      "companhia": "Japan Airlines",
+      "descricao": "Roteiro moderno com experiências gastronômicas e passeios futuristas.",
       "imagem": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80",
-      "comentarios": [],
-      "favorito": true
+      "comentarios": [
+        {
+          "nome": "phillip",
+          "comentario": "good buy it",
+          "nota": 4
+        }
+      ],
+      "favorito": true,
+      "assentosDisponiveis": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
     },
     {
-      "titulo": "ottawa",
-      "genero": "Neve",
-      "ano": "mar - april",
-      "plataforma": "Gol",
+      "destinos": "ottawa",
+      "tipo": "Neve",
+      "epoca": "mar - april",
+      "companhia": "Gol",
       "duracao": "7",
-      "sinopse": "muita neve e gente amigável, além de maple syrup",
+      "descricao": "muita neve e gente amigável, além de maple syrup",
       "imagem": "https://media-cdn.tripadvisor.com/media/photo-c/1280x250/0e/cf/57/e4/rideau-canal-skateway.jpg",
       "comentarios": [
         {
@@ -87,8 +97,29 @@
         }
       ],
       "favorito": true,
-      "id": "_lxpj2CW9V0"
+      "id": "_lxpj2CW9V0",
+      "assentosDisponiveis": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+    },
+    {
+      "destinos": "Pelotas",
+      "tipo": "historica",
+      "epoca": "jan - fev",
+      "plataforma": "Latam",
+      "duracao": "2",
+      "descricao": "pelotas rs dos guri",
+      "imagem": "https://publicador-api.pelotas.com.br/storage/738b0f3708dd0cf49d9e8a625babf5bec87ea5b1.jpg",
+      "comentarios": [
+        {
+          "nome": "victor",
+          "comentario": "meio mid",
+          "nota": 2
+        }
+      ],
+      "favorito": true,
+      "id": "3zN62JcTcWk",
+      "assentosDisponiveis": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
     }
   ],
+  "reservas": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

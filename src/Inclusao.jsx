@@ -7,12 +7,12 @@ function Inclusao() {
   const { register, handleSubmit, reset, setFocus } = useForm()
 
   async function cadastraDestino(data) {
-    const titulo = data.titulo
-    const genero = data.genero
-    const ano = data.ano
-    const plataforma = data.plataforma
+    const destinos = data.destinos
+    const tipo = data.tipo
+    const epoca = data.epoca
+    const companhia = data.companhia
     const duracao = data.duracao
-    const sinopse = data.sinopse
+    const descricao = data.descricao
     const imagem = data.imagem
 
     try {
@@ -20,7 +20,7 @@ function Inclusao() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          titulo, genero, ano, plataforma, duracao, sinopse, imagem, comentarios: [], favorito: false
+          destinos, tipo, epoca, companhia, duracao, descricao, imagem, comentarios: [], favorito: false
         })
       })
       if (!resposta.ok) throw new Error("Erro ao incluir o destino")
@@ -37,7 +37,7 @@ function Inclusao() {
   }
 
   useEffect(() => {
-    setFocus("titulo")
+    setFocus("destinos")
   }, [])
 
   return (
@@ -52,34 +52,34 @@ function Inclusao() {
           <form className="space-y-5" 
             onSubmit={handleSubmit(cadastraDestino)} >
             <div>
-              <label htmlFor="titulo" className="block text-sm font-semibold mb-1">Nome do Destino:</label>
-              <input type="text" id="titulo" required
+              <label htmlFor="destinos" className="block text-sm font-semibold mb-1">Nome do Destino:</label>
+              <input type="text" id="destinos" required
                 className="w-full rounded-3xl border border-slate-700 bg-slate-900 p-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                {...register("titulo")} />
+                {...register("destinos")} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="genero" className="block text-sm font-semibold mb-1">Tipo de viagem:</label>
-                <input type="text" id="genero" required
+                <label htmlFor="tipo" className="block text-sm font-semibold mb-1">Tipo de viagem:</label>
+                <input type="text" id="tipo" required
                   className="w-full rounded-3xl border border-slate-700 bg-slate-900 p-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                  {...register("genero")} />
+                  {...register("tipo")} />
               </div>
 
               <div>
-                <label htmlFor="ano" className="block text-sm font-semibold mb-1">Melhor época:</label>
-                <input type="text" id="ano" required
+                <label htmlFor="epoca" className="block text-sm font-semibold mb-1">Melhor época:</label>
+                <input type="text" id="epoca" required
                   className="w-full rounded-3xl border border-slate-700 bg-slate-900 p-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                  {...register("ano")} />
+                  {...register("epoca")} />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="plataforma" className="block text-sm font-semibold mb-1">Companhia aérea:</label>
-                <input type="text" id="plataforma" required
+                <label htmlFor="companhia" className="block text-sm font-semibold mb-1">Companhia aérea:</label>
+                <input type="text" id="companhia" required
                   className="w-full rounded-3xl border border-slate-700 bg-slate-900 p-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                  {...register("plataforma")} />
+                  {...register("companhia")} />
               </div>
 
               <div>
@@ -91,10 +91,10 @@ function Inclusao() {
             </div>
 
             <div>
-              <label htmlFor="sinopse" className="block text-sm font-semibold mb-1">Descrição do destino:</label>
-              <textarea id="sinopse" required rows={4}
+              <label htmlFor="descricao" className="block text-sm font-semibold mb-1">Descrição do destino:</label>
+              <textarea id="descricao" required rows={4}
                 className="w-full rounded-3xl border border-slate-700 bg-slate-900 p-3 text-sm text-slate-100 resize-none focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                {...register("sinopse")}
+                {...register("descricao")}
               ></textarea>
             </div>
 

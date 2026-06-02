@@ -17,7 +17,7 @@ function ListaComentarios({ filme, fecharLista }) {
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-4">
                     <div>
                         <h2 className="text-3xl font-bold">Avaliações</h2>
-                        <p className="text-lg text-slate-400">{filme.titulo}</p>
+                        <p className="text-lg text-slate-400">{filme.destinos}</p>
                     </div>
                     <button
                         onClick={fecharLista}

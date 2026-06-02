@@ -13,8 +13,8 @@ function Pesquisa() {
       if (!resposta.ok) throw new Error("Erro ao consultar os destinos")
       const dados = await resposta.json()
       const dados2 = dados.filter(destino => (
-        destino.titulo.toUpperCase().includes(data.pesquisa.toUpperCase()) ||
-        destino.genero.toUpperCase().includes(data.pesquisa.toUpperCase())
+        destino.destinos.toUpperCase().includes(data.pesquisa.toUpperCase()) ||
+        destino.tipo.toUpperCase().includes(data.pesquisa.toUpperCase())
       ))
       if (dados2.length == 0) {
         alert("Não há destinos com essa palavra-chave no título ou categoria")

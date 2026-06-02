@@ -54,7 +54,7 @@ function ModalAvaliacao({ filme, fecharModal, atualizarFilme }) {
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
             <div className="bg-slate-950 w-[500px] rounded-3xl p-6 shadow-2xl shadow-cyan-950/40 border border-slate-700 text-slate-100">
                 <h2 className="text-2xl font-bold mb-4">Avaliar Destino</h2>
-                <p className="font-semibold text-lg mb-4 text-slate-300">{filme.titulo}</p>
+                <p className="font-semibold text-lg mb-4 text-slate-300">{filme.destinos}</p>
                 <form onSubmit={handleSubmit(enviaAvaliacao)}>
                     <div className="mb-4">
                         <label className="block font-semibold mb-1">Nome</label>
