@@ -344,14 +344,6 @@
   ],
   "reservas": [
     {
-      "destinoId": "d1",
-      "assentos": [
-        10
-      ],
-      "dataReserva": "2026-06-02T03:03:18.644Z",
-      "id": "D3HkcxMhZb8"
-    },
-    {
       "destinoId": "_lxpj2CW9V0",
       "assentos": [
         7,
@@ -359,6 +351,24 @@
       ],
       "dataReserva": "2026-06-02T03:11:22.352Z",
       "id": "HzmvTp4_nOw"
+    },
+    {
+      "destinoId": "d1",
+      "assentos": [
+        2
+      ],
+      "dataReserva": "2026-06-02T12:02:38.877Z",
+      "id": "LVojV_W2CEc"
+    },
+    {
+      "destinoId": "d1",
+      "assentos": [
+        10,
+        11,
+        17
+      ],
+      "dataReserva": "2026-06-02T12:09:53.632Z",
+      "id": "bDRvbxM3vx4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
