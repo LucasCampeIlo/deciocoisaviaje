@@ -21,7 +21,7 @@ export function Titulo() {
                 <Link to="/" className='px-5 py-2 bg-slate-800 text-cyan-200 font-semibold rounded-full no-underline hover:bg-slate-700'>Home</Link>
                 <Link to="/inclusao" className='px-5 py-2 bg-slate-800 text-cyan-200 font-semibold rounded-full no-underline hover:bg-slate-700'>Novo Destino</Link>
                 <Link to="/pesquisa" className='px-5 py-2 bg-slate-800 text-cyan-200 font-semibold rounded-full no-underline hover:bg-slate-700'>Buscar</Link>
-                <Link to="/favoritos" className='px-5 py-2 bg-cyan-600 text-slate-950 font-semibold rounded-full no-underline hover:bg-cyan-500'>⭐ Favoritos</Link>
+                <Link to="/favoritos" className='px-5 py-2 bg-cyan-600 text-slate-950 font-semibold rounded-full no-underline hover:bg-cyan-500'>Reservas</Link>
             </nav>
         </>
     )
